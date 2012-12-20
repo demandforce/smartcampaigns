@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="0.009" errors="0" skipped="0" tests="1" name="com.demandforce.AppTest">
+<testsuite failures="0" time="0.012" errors="0" skipped="0" tests="1" name="com.demandforce.AppTest">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries"/>
@@ -22,7 +22,7 @@
     <property name="basedir" value="/Users/rzhang/codeReload/smartcampaigns"/>
     <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/Users/rzhang/codeReload/smartcampaigns/target/surefire/surefirebooter9042411219400711599.jar"/>
+    <property name="surefire.real.class.path" value="/Users/rzhang/codeReload/smartcampaigns/target/surefire/surefirebooter6227560555115957199.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/_f/01r_b39d2dbccg_gfnrpz8h59r0719/T/"/>
     <property name="line.separator" value="
 "/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
-    <property name="sun.java.command" value="/Users/rzhang/codeReload/smartcampaigns/target/surefire/surefirebooter9042411219400711599.jar /Users/rzhang/codeReload/smartcampaigns/target/surefire/surefire8444163629901546818tmp /Users/rzhang/codeReload/smartcampaigns/target/surefire/surefire5354771348390540989tmp"/>
+    <property name="sun.java.command" value="/Users/rzhang/codeReload/smartcampaigns/target/surefire/surefirebooter6227560555115957199.jar /Users/rzhang/codeReload/smartcampaigns/target/surefire/surefire1596346933379274930tmp /Users/rzhang/codeReload/smartcampaigns/target/surefire/surefire6543526527444506827tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="apple.awt.CToolkit"/>
@@ -62,5 +62,5 @@
     <property name="mrj.version" value="1070.1.6.0_37-434"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase time="0.002" classname="com.demandforce.AppTest" name="testApp"/>
+  <testcase time="0.001" classname="com.demandforce.AppTest" name="testApp"/>
 </testsuite>
