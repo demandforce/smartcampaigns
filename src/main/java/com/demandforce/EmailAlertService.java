@@ -4,20 +4,20 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class EmailAltertService {
+public class EmailAlertService {
 	
 	public static void main(String arg[]){
-		EmailAltertService emailAltertService = new EmailAltertService();
-		emailAltertService.generateEmailAlterts();
+		EmailAlertService emailAlertService = new EmailAlertService();
+		emailAlertService.generateEmailAlterts();
 		System.err.println("done");
 	}
 
 	public void generateEmailAlterts(){
 		List<AltertBusiness> businesses = getEmailAlterBusinessList();
-		emailAltertToBusiness(businesses);
+		emailAlertToBusiness(businesses);
 	}
 
-	private void emailAltertToBusiness(List<AltertBusiness> businesses) {
+	private void emailAlertToBusiness(List<AltertBusiness> businesses) {
 		
 		Iterator<AltertBusiness> iterator = businesses.iterator();
 		while (iterator.hasNext()) {
