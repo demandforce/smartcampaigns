@@ -13,7 +13,17 @@ import javax.mail.internet.MimeMessage;
 public class SendMailTLS {
  
 	public static void main(String[] args) {
- 
+		
+		String fromEmailAddress = "dfrecommend@gmail.com";
+		String toEmailAddress = "yzhangwei@gmail.com";
+		String emailSubject = "More Revenue";
+		String emailMessage = "Generate Campian for yoru upcoming slow days";
+		SendMailTLS.email(fromEmailAddress, toEmailAddress, emailSubject, emailMessage);
+		
+	}
+	
+	public static void email(String fromEmailAddress, String toEmailAddress, String emailSubject, String emailMessage){
+		
 		final String username = "dfrecommend@gmail.com";
 		final String password = "ondemand";
  
@@ -32,12 +42,11 @@ public class SendMailTLS {
 		try {
 			 
 			Message message = new MimeMessage(session);
-			message.setFrom(new InternetAddress("dfrecommend@gmail.com"));
+			message.setFrom(new InternetAddress(fromEmailAddress));
 			message.setRecipients(Message.RecipientType.TO,
-				InternetAddress.parse("yzhangwei@gmail.com"));
-			message.setSubject("Testing Subject df");
-			message.setText("Dear Mail Crawler,"
-				+ "\n\n No spam to my email, please!");
+				InternetAddress.parse(toEmailAddress));
+			message.setSubject(emailSubject);
+			message.setText(emailMessage);
  
 			Transport.send(message);
  
