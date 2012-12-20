@@ -12,7 +12,7 @@ public class EmailAltertService {
 
 	private void emailAltertToBusiness(List<AltertBusiness> businesses) {
 		
-		Iterator iterator = businesses.iterator();
+		Iterator<AltertBusiness> iterator = businesses.iterator();
 		while (iterator.hasNext()) {
 			AltertBusiness business = (AltertBusiness) iterator.next();
 			String fromEmailAddress = business.getBusinessEmailAddress();
@@ -20,9 +20,8 @@ public class EmailAltertService {
 			Iterator<String> emailsToSendCompainIterator = emailsToSendCampain.iterator();
 			while (emailsToSendCompainIterator.hasNext()) {
 				String toEmailAddress = (String) emailsToSendCompainIterator.next();
-				SendMailTLS.email(fromEmailAddress, toEmailAddress, business.getActionTitle(), business.getMessageText());
+				SendMailTLS.email(fromEmailAddress, toEmailAddress, business.getMessageTitle(), business.getMessageText());
 			}
-			
 		}
 		
 	}
