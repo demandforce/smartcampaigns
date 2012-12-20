@@ -13,20 +13,13 @@ public class EmailAlertService {
 	}
 
 	public void generateEmailAlterts(){
-<<<<<<< HEAD:src/test/java/com/demandforce/EmailAltertService.java
-		AltertBusiness businesses = getEmailAlterBusinessList();
-		emailAltertToBusiness(businesses);
-	}
+        AlertBusiness businesses = getEmailAlterForBusiness("");
+        emailAlertToBusiness(businesses);
+    }
 
 
-	private void emailAltertToBusiness(AltertBusiness business) {
-=======
-		List<AltertBusiness> businesses = getEmailAlterBusinessList();
-		emailAlertToBusiness(businesses);
-	}
 
-	private void emailAlertToBusiness(List<AltertBusiness> businesses) {
->>>>>>> a55c12b7e9f95b995bdb9ed488c928ff191cd2cd:src/main/java/com/demandforce/EmailAlertService.java
+	private void emailAlertToBusiness(AlertBusiness business) {
 		
 			String fromEmailAddress = business.getBusinessEmailAddress();
 			List<String> emailsToSendCampain = business.getEmails();
@@ -35,72 +28,30 @@ public class EmailAlertService {
 				String toEmailAddress = (String) emailsToSendCompainIterator.next();
 				SendMailTLS.email(fromEmailAddress, toEmailAddress, business.getMessageTitle(), business.getMessageText());
 			}
-			
+
 	}
 
-	private AltertBusiness getEmailAlterBusinessList() {
-		// TODO Auto-generated method stub
-		AltertBusiness altertBusiness = new AltertBusiness();
-		altertBusiness.setActionTitle("Create a campaign with 20% incentive");
-		altertBusiness.setActionUrl("http://demo.demandforced3.com");
-		altertBusiness.setBusinessEmailAddress("dfcampain@demandforce.com");
-		altertBusiness.setBusinessID("1");
-		altertBusiness.setBusinessName("Dentist Campain");
-		List<String> emails = new ArrayList<String>();
+
+
+    public AlertBusiness getEmailAlterForBusiness(String businessId) {
+        AlertBusiness alertBusiness = new AlertBusiness();
+        alertBusiness.setActionTitle("Create a campaign with 20% incentive");
+        alertBusiness.setActionUrl("http://demo.demandforced3.com");
+        alertBusiness.setBusinessEmailAddress("dfcampain@demandforce.com");
+        alertBusiness.setBusinessID("1");
+        alertBusiness.setBusinessName("Dentist Campain");
+        List<String> emails = new ArrayList<String>();
 //		emails.add("jmasilamani@demandforce.com");
 //		emails.add("hcheung@demandforce.com");
 //		emails.add("wli@demandforce.com");
-		emails.add("rzhang@demandforce.com");
-		altertBusiness.setEmails(emails);
-		altertBusiness.setMessageText("Your appointments schedule is low compared to last year.");
-		altertBusiness.setMessageTitle("Your Appointment schedule is low");
-		List<String> slowDates = new ArrayList<String>();
-		slowDates.add("Jan 3 2013");
-		altertBusiness.setSlowDates(slowDates );
-		
-		
-		return altertBusiness;
-	}
-//	
-//	private void emailAltertToBusiness(List<AltertBusiness> businesses) {
-//		
-//		Iterator<AltertBusiness> iterator = businesses.iterator();
-//		while (iterator.hasNext()) {
-//			AltertBusiness business = (AltertBusiness) iterator.next();
-//			String fromEmailAddress = business.getBusinessEmailAddress();
-//			List<String> emailsToSendCampain = business.getEmails();
-//			Iterator<String> emailsToSendCompainIterator = emailsToSendCampain.iterator();
-//			while (emailsToSendCompainIterator.hasNext()) {
-//				String toEmailAddress = (String) emailsToSendCompainIterator.next();
-//				SendMailTLS.email(fromEmailAddress, toEmailAddress, business.getMessageTitle(), business.getMessageText());
-//			}
-//		}
-//		
-//	}
-//
-//	private List<AltertBusiness> getEmailAlterBusinessList() {
-//		// TODO Auto-generated method stub
-//		AltertBusiness altertBusiness = new AltertBusiness();
-//		altertBusiness.setActionTitle("Create a campaign with 20% incentive");
-//		altertBusiness.setActionUrl("http://demo.demandforced3.com");
-//		altertBusiness.setBusinessEmailAddress("dfcampain@demandforce.com");
-//		altertBusiness.setBusinessID("1");
-//		altertBusiness.setBusinessName("Dentist Campain");
-//		List<String> emails = new ArrayList<String>();
-////		emails.add("jmasilamani@demandforce.com");
-////		emails.add("hcheung@demandforce.com");
-////		emails.add("wli@demandforce.com");
-//		emails.add("rzhang@demandforce.com");
-//		altertBusiness.setEmails(emails);
-//		altertBusiness.setMessageText("Your appointments schedule is low compared to last year.");
-//		altertBusiness.setMessageTitle("Your Appointment schedule is low");
-//		List<String> slowDates = new ArrayList<String>();
-//		slowDates.add("Jan 3 2013");
-//		altertBusiness.setSlowDates(slowDates );
-//		
-//		List<AltertBusiness> altertBusinessesList = new ArrayList<AltertBusiness>();
-//		
-//		altertBusinessesList.add(altertBusiness);
-//		return altertBusinessesList;
-//	}
+        emails.add("rzhang@demandforce.com");
+        alertBusiness.setEmails(emails);
+        alertBusiness.setMessageText("Your appointments schedule is low compared to last year.");
+        alertBusiness.setMessageTitle("Your Appointment schedule is low");
+        List<String> slowDates = new ArrayList<String>();
+        slowDates.add("Jan 3 2013");
+        alertBusiness.setSlowDates(slowDates );
+
+        return alertBusiness;
+    }
 }

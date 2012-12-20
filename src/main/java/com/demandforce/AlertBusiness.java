@@ -2,7 +2,7 @@ package com.demandforce;
 
 import java.util.List;
 
-public class AltertBusiness {
+public class AlertBusiness {
 
 	private String BusinessName;
 	private String BusinessID;
