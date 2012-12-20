@@ -22,7 +22,7 @@
     <property name="basedir" value="/Users/rzhang/codeReload/smartcampaigns"/>
     <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="surefire.real.class.path" value="/Users/rzhang/codeReload/smartcampaigns/target/surefire/surefirebooter2395734008620421634.jar"/>
+    <property name="surefire.real.class.path" value="/Users/rzhang/codeReload/smartcampaigns/target/surefire/surefirebooter7979109553883153817.jar"/>
     <property name="java.io.tmpdir" value="/var/folders/_f/01r_b39d2dbccg_gfnrpz8h59r0719/T/"/>
     <property name="line.separator" value="
 "/>
@@ -45,7 +45,7 @@
     <property name="java.vm.specification.version" value="1.0"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home"/>
-    <property name="sun.java.command" value="/Users/rzhang/codeReload/smartcampaigns/target/surefire/surefirebooter2395734008620421634.jar /Users/rzhang/codeReload/smartcampaigns/target/surefire/surefire8958815771138440277tmp /Users/rzhang/codeReload/smartcampaigns/target/surefire/surefire6269615608327975189tmp"/>
+    <property name="sun.java.command" value="/Users/rzhang/codeReload/smartcampaigns/target/surefire/surefirebooter7979109553883153817.jar /Users/rzhang/codeReload/smartcampaigns/target/surefire/surefire2442108993340887681tmp /Users/rzhang/codeReload/smartcampaigns/target/surefire/surefire8476640359252414640tmp"/>
     <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="apple.awt.CToolkit"/>
