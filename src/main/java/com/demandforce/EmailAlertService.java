@@ -4,21 +4,29 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class EmailAltertService {
+public class EmailAlertService {
 	
 	public static void main(String arg[]){
-		EmailAltertService emailAltertService = new EmailAltertService();
-		emailAltertService.generateEmailAlterts();
+		EmailAlertService emailAlertService = new EmailAlertService();
+		emailAlertService.generateEmailAlterts();
 		System.err.println("done");
 	}
 
 	public void generateEmailAlterts(){
+<<<<<<< HEAD:src/test/java/com/demandforce/EmailAltertService.java
 		AltertBusiness businesses = getEmailAlterBusinessList();
 		emailAltertToBusiness(businesses);
 	}
 
 
 	private void emailAltertToBusiness(AltertBusiness business) {
+=======
+		List<AltertBusiness> businesses = getEmailAlterBusinessList();
+		emailAlertToBusiness(businesses);
+	}
+
+	private void emailAlertToBusiness(List<AltertBusiness> businesses) {
+>>>>>>> a55c12b7e9f95b995bdb9ed488c928ff191cd2cd:src/main/java/com/demandforce/EmailAlertService.java
 		
 			String fromEmailAddress = business.getBusinessEmailAddress();
 			List<String> emailsToSendCampain = business.getEmails();

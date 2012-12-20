@@ -1,5 +1,4 @@
 *.class
-
 # Package Files #
 *.jar
 *.war
@@ -8,4 +7,6 @@
 .project
 .settings*
 target*
+.idea*
+*.iml
 
