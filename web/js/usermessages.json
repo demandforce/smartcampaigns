@@ -1,0 +1,10 @@
+{"messages" : [
+    {"message" : {
+        "title" : "Your Appointment schedule is low",
+        "messageText" : "Your appointments schedule is low compared to last year.",
+        "actionTitle" : "Create a campaign with 20% incentive",
+        "actionUrl" : "http://demo.demandforced3.com"
+    }
+}
+]
+}
