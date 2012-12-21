@@ -22,10 +22,10 @@ public class SmartCampaignService {
 			alertBusiness.setEmails(getUserEmails(businessId));
 			
 			alertBusiness.setSlowWeek(getNextWeek().get(Calendar.WEEK_OF_YEAR));
-			alertBusiness.setActionTitle("actionTitle");
-			alertBusiness.setActionUrl("http://www.demandforce.com");
-			alertBusiness.setMessageText("messageText");
-			alertBusiness.setMessageTitle("messageTitle");
+			alertBusiness.setActionTitle("10% Off Next Week");
+			alertBusiness.setActionUrl("http://www.demandforced3.com/bp2/createSmartCampaign.jsp?templateId=99");
+			alertBusiness.setMessageText("Next week only has a few appoinmts");
+			alertBusiness.setMessageTitle("Create a campaing right now.");
 		}
 		
 		return alertBusiness;
