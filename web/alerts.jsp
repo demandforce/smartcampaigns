@@ -17,8 +17,8 @@
 
     <h4><%=alertBusiness.getMessageTitle()%></h4>
     <p><%= alertBusiness.getMessageText()%></p>
-    <a id="action" href="<%=alertBusiness.getActionUrl()%>">
-        <%=alertBusiness.getActionTitle()%></a>
+    <a id="action" href="<%=alertBusiness.getActionUrl()%>" target="_top">
+        <%=alertBusiness.getActionTitle()%></a> or <a href="https://172.16.12.15/bp2/campaigns/promotion/step/createCustomCampaign.jsp?cat=1" target="_top">Create your own campaign</a>
 </div>
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script src="js/bootstrap.js"></script>

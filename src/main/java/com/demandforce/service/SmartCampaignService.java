@@ -14,6 +14,7 @@ import com.demandforce.AlertBusiness;
 
 
 public class SmartCampaignService {
+    private static Connection conn = null;
 	public AlertBusiness getSlowAlertMessage(String businessId) {
 		AlertBusiness alertBusiness = null;
 		
@@ -22,10 +23,10 @@ public class SmartCampaignService {
 			alertBusiness.setEmails(getUserEmails(businessId));
 			
 			alertBusiness.setSlowWeek(getNextWeek().get(Calendar.WEEK_OF_YEAR));
-			alertBusiness.setActionTitle("10% Off Next Week");
-			alertBusiness.setActionUrl("http://www.demandforced3.com/bp2/createSmartCampaign.jsp?templateId=99");
-			alertBusiness.setMessageText("Next week only has a few appoinmts");
-			alertBusiness.setMessageTitle("Create a campaing right now.");
+			alertBusiness.setActionTitle("10% Off next week");
+			alertBusiness.setActionUrl("https://172.16.12.15/bp2/campaigns/promotion/step/selectMessageProcess.jsp?campaignId=&campaignTemplateId=2587&cat=1");
+			alertBusiness.setMessageText("We suggest you create a campaign. Here is one that works best for businesses in your industry.");
+			alertBusiness.setMessageTitle("Scheduled appointments for next week is lower than your past history.");
 		}
 		
 		return alertBusiness;
@@ -34,7 +35,7 @@ public class SmartCampaignService {
 	private AlertBusiness getAlertBusiness(String businessId) {
 		AlertBusiness alertBusiness = new AlertBusiness();
 		
-		String sql = "SELECT * FROM Business where ID = ?";
+		String sql = "SELECT name,email FROM Business where ID = ?";
 		
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -45,7 +46,9 @@ public class SmartCampaignService {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, businessId);
 
-			rs = ps.executeQuery();
+            long time = System.currentTimeMillis();
+            rs = ps.executeQuery();
+            System.out.println(time - System.currentTimeMillis());
 
 			if (rs.next()) {
 				alertBusiness.setBusinessID(businessId);
@@ -61,9 +64,6 @@ public class SmartCampaignService {
 				}
 				if (ps != null) {
 					ps.close();
-				}
-				if (conn != null) {
-					conn.close();
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -109,9 +109,9 @@ public class SmartCampaignService {
 			ps.setString(1, businessId);
 			ps.setInt(2, year);
 			ps.setInt(3, weekOfYear);
-
-			rs = ps.executeQuery();
-
+            long time = System.currentTimeMillis();
+            rs = ps.executeQuery();
+            System.out.println(time - System.currentTimeMillis());
 			if (rs.next()) {
 				result = rs.getInt("ApptCount");
 			}
@@ -124,9 +124,6 @@ public class SmartCampaignService {
 				}
 				if (ps != null) {
 					ps.close();
-				}
-				if (conn != null) {
-					conn.close();
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -150,9 +147,9 @@ public class SmartCampaignService {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, businessId);
 			ps.setInt(2, weekOfYear);
-
-			rs = ps.executeQuery();
-
+            long time = System.currentTimeMillis();
+            rs = ps.executeQuery();
+            System.out.println(time - System.currentTimeMillis());
 			if (rs.next()) {
 				result = rs.getInt("ApptCount");
 			}
@@ -166,9 +163,7 @@ public class SmartCampaignService {
 				if (ps != null) {
 					ps.close();
 				}
-				if (conn != null) {
-					conn.close();
-				}
+
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -194,9 +189,9 @@ public class SmartCampaignService {
 			conn = getConnect();
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, businessId);
-
+            long time = System.currentTimeMillis();
 			rs = ps.executeQuery();
-
+            System.out.println(time - System.currentTimeMillis());
 			if (rs.next()) {
 				result.add(rs.getString("email"));
 			}
@@ -210,9 +205,6 @@ public class SmartCampaignService {
 				if (ps != null) {
 					ps.close();
 				}
-				if (conn != null) {
-					conn.close();
-				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -222,11 +214,12 @@ public class SmartCampaignService {
 	}
 	
 	private static Connection getConnect() throws SQLException {
-		Connection conn = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		     
-			conn = DriverManager.getConnection(dbUrl, userId, userPassword);
+            if(conn == null || conn.isClosed()){
+                Class.forName("com.mysql.jdbc.Driver");
+                conn = DriverManager.getConnection(dbUrl, userId, userPassword);
+            }
+
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
