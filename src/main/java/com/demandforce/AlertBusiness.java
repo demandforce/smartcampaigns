@@ -8,7 +8,7 @@ public class AlertBusiness {
 	private String BusinessID;
 	private String BusinessEmailAddress;
 	private List<String> emails;
-	private List<String> SlowDates;
+	private String slowMonth;
 	
 	private String messageTitle;
 	private String messageText;
@@ -27,12 +27,8 @@ public class AlertBusiness {
 	public void setBusinessID(String businessID) {
 		BusinessID = businessID;
 	}
-	public List<String> getSlowDates() {
-		return SlowDates;
-	}
-	public void setSlowDates(List<String> slowDates) {
-		SlowDates = slowDates;
-	}
+	
+	
 	public String getBusinessEmailAddress() {
 		return BusinessEmailAddress;
 	}
@@ -68,6 +64,12 @@ public class AlertBusiness {
 	}
 	public void setActionUrl(String actionUrl) {
 		this.actionUrl = actionUrl;
+	}
+	public String getSlowMonth() {
+		return slowMonth;
+	}
+	public void setSlowMonth(String slowMonth) {
+		this.slowMonth = slowMonth;
 	}
 	
 	

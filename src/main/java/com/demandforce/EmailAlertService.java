@@ -47,9 +47,8 @@ public class EmailAlertService {
 		alertBusiness
 				.setMessageText("Your appointments schedule is low compared to last year.");
 		alertBusiness.setMessageTitle("Your Appointment schedule is low");
-		List<String> slowDates = new ArrayList<String>();
-		slowDates.add("Jan 3 2013");
-		alertBusiness.setSlowDates(slowDates);
+		
+		alertBusiness.setSlowMonth("Jan");
 
 		return alertBusiness;
 	}
