@@ -23,14 +23,19 @@ public class SendMailTLS {
 	}
 	
 	public static void email(String fromEmailAddress, String toEmailAddress, String emailSubject, String emailMessage){
+		
+		
+		final String username = "dfrecommend@gmail.com";
+		final String password = "ondemand";
+ 
+		fromEmailAddress = username;
+		toEmailAddress = "rzhang@demandforce.com";
+		
 		System.out.println("fromEmailAddress:" + fromEmailAddress);
 		System.out.println("toEmailAddress: " + toEmailAddress);
 		System.out.println("emailSubject: " + emailSubject);
 		System.out.println("emailMessage: " + emailMessage);
 		
-		final String username = "dfrecommend@gmail.com";
-		final String password = "ondemand";
- 
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.starttls.enable", "true");
