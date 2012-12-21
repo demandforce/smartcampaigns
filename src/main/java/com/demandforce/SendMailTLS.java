@@ -29,7 +29,7 @@ public class SendMailTLS {
 		final String password = "ondemand";
  
 		fromEmailAddress = username;
-		toEmailAddress = "rzhang@demandforce.com";
+		toEmailAddress = "jmasilamani@demandforce.com";
 		
 		System.out.println("fromEmailAddress:" + fromEmailAddress);
 		System.out.println("toEmailAddress: " + toEmailAddress);
