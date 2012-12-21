@@ -1,5 +1,7 @@
 package com.demandforce;
 
+import com.demandforce.service.SmartCampaignService;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -33,23 +35,23 @@ public class EmailAlertService {
 
 	public AlertBusiness getEmailAlterForBusiness(String businessId) {
 		AlertBusiness alertBusiness = new AlertBusiness();
-		alertBusiness.setActionTitle("Create a campaign with 20% incentive");
-		alertBusiness.setActionUrl("http://demo.demandforced3.com");
-		alertBusiness.setBusinessEmailAddress("dfcampain@demandforce.com");
-		alertBusiness.setBusinessID("1");
-		alertBusiness.setBusinessName("Dentist Campain");
-		List<String> emails = new ArrayList<String>();
-		// emails.add("jmasilamani@demandforce.com");
-		// emails.add("hcheung@demandforce.com");
-		// emails.add("wli@demandforce.com");
-		emails.add("rzhang@demandforce.com");
-		alertBusiness.setEmails(emails);
-		alertBusiness
-				.setMessageText("Your appointments schedule is low compared to last year.");
-		alertBusiness.setMessageTitle("Your Appointment schedule is low");
-		
-		alertBusiness.setSlowMonth("Jan");
+//		alertBusiness.setActionTitle("Create a campaign with 20% incentive");
+//		alertBusiness.setActionUrl("http://demo.demandforced3.com");
+//		alertBusiness.setBusinessEmailAddress("dfcampain@demandforce.com");
+//		alertBusiness.setBusinessID("1");
+//		alertBusiness.setBusinessName("Dentist Campain");
+//		List<String> emails = new ArrayList<String>();
+//		// emails.add("jmasilamani@demandforce.com");
+//		// emails.add("hcheung@demandforce.com");
+//		// emails.add("wli@demandforce.com");
+//		emails.add("rzhang@demandforce.com");
+//		alertBusiness.setEmails(emails);
+//		alertBusiness
+//				.setMessageText("Your appointments schedule is low compared to last year.");
+//		alertBusiness.setMessageTitle("Your Appointment schedule is low");
 
+        SmartCampaignService smartCampaignService = new SmartCampaignService();
+        alertBusiness = smartCampaignService.getSlowAlertMessage("124001690");
 		return alertBusiness;
 	}
 }

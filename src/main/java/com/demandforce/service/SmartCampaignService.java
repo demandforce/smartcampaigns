@@ -31,7 +31,7 @@ public class SmartCampaignService {
 		return alertBusiness;
 	}
 	
-	public AlertBusiness getAlertBusiness(String businessId) {
+	private AlertBusiness getAlertBusiness(String businessId) {
 		AlertBusiness alertBusiness = new AlertBusiness();
 		
 		String sql = "SELECT * FROM Business where ID = ?";
