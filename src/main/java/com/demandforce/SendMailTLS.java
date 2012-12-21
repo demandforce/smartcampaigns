@@ -23,6 +23,10 @@ public class SendMailTLS {
 	}
 	
 	public static void email(String fromEmailAddress, String toEmailAddress, String emailSubject, String emailMessage){
+		System.out.println("fromEmailAddress:" + fromEmailAddress);
+		System.out.println("toEmailAddress: " + toEmailAddress);
+		System.out.println("emailSubject: " + emailSubject);
+		System.out.println("emailMessage: " + emailMessage);
 		
 		final String username = "dfrecommend@gmail.com";
 		final String password = "ondemand";
@@ -46,7 +50,8 @@ public class SendMailTLS {
 			message.setRecipients(Message.RecipientType.TO,
 				InternetAddress.parse(toEmailAddress));
 			message.setSubject(emailSubject);
-			message.setText(emailMessage);
+			//message.setText(emailMessage);
+			message.setContent(emailMessage,"text/html; charset=utf-8");
  
 			Transport.send(message);
  

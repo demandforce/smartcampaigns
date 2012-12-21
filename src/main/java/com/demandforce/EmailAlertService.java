@@ -1,6 +1,7 @@
 package com.demandforce;
 
 import com.demandforce.service.SmartCampaignService;
+import com.sun.mail.handlers.message_rfc822;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,8 +28,17 @@ public class EmailAlertService {
 				.iterator();
 		while (emailsToSendCompainIterator.hasNext()) {
 			String toEmailAddress = (String) emailsToSendCompainIterator.next();
+			StringBuffer msg = new StringBuffer();
+			 msg.append("<html><body>");
+			 msg.append(business.getActionTitle());
+			 msg.append("<br>");
+			 msg.append(business.getActionUrl());
+			 msg.append("<br>");
+			 msg.append(business.getMessageText());
+			 msg.append("</body></html>");
+			 
 			SendMailTLS.email(fromEmailAddress, toEmailAddress,
-					business.getMessageTitle(), business.getMessageText());
+					business.getMessageTitle(), msg.toString());
 		}
 
 	}
